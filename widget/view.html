@@ -1,0 +1,44 @@
+<!-- Copyright start
+  Copyright (C) 2008 - 2025 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end -->
+<div class="widget widget-container chart {{currentTheme}} taskStatusContainer">
+    <div class="display-flex-space-between margin-chart">
+        <div class="padding-right-0 padding-left-0 widget-dashboard-title-width"
+            data-ng-class="(page === 'dashboard' || page === 'reporting') ? 'widget-dashboard-title-width' : 'widget-title-width'">
+            <h5 class="margin-top-0 margin-bottom-0 text-overflow ng-binding">{{config.title}}</h5>
+        </div>
+        <div class="padding-right-0 padding-left-0"
+            data-ng-class="(page === 'dashboard' || page === 'reporting') ? 'widget-dashboard-actions-width' : 'widget-actions-width'">
+            <span class="fa btn widget-action-icon btn-sm pull-right" data-ng-click="collapsed = !collapsed"
+                data-ng-class="{'fa-caret-up': !collapsed, 'fa-caret-down': collapsed}"></span>
+        </div>
+    </div>
+    <div data-ng-hide="collapsed">
+        <div class="padding-left-lg padding-bottom-lg">
+            <div class="margin-right-lg maxHeight" data-ng-if="taskData.length !== 0">
+                <div ng-repeat="task in taskData track by $index" class="position-relative contentBox padding-bottom-md padding-top-sm" data-ng-class="{'contentTextHighlighted': task.taskStatus==='in-progress' }">
+                    <div class="icon-wrapper">
+                        <span ng-switch="task.taskStatus" class="font-size-14em padding-lg padding-top-0 taskLine" ng-class="{'is-last': $last }">
+                            <span><img ng-switch-when="completed" src="{{taskIcons.completed}}" title="completed" class="completed" alt="completed" width="24" height="24"></span>
+                            <span><img ng-switch-when="in-progress" src="{{taskIcons.inProgress}}" title="inProgress" class="inProgress" alt="inProgress" width="24" height="24"></span>
+                            <span><img ng-switch-when="queued" src="{{taskIcons.queued}}" title="queued" class="queued teal" alt="queued" width="24" height="24"></span>
+                            <i ng-switch-when="awaiting-user-input" title="awaiting-user-inpu" class="icon icon-awaiting awaiting-yellow"></i>
+                            <i ng-switch-when="failed" title="failed" class="icon icon-failed failed failed-red"></i>
+                            <i ng-switch-default title="default" class="icon icon-failed failed failed-red"></i>
+                        </span>
+                    </div>
+                    <div class="content contentText line-height-12 padding-top-sm width-100pt">
+                        <div class="font-09em">{{ task.title }}</div>
+                        <time class="font-07em text-inactive">{{ task.statusUpdateTime }}</time>
+                        <div class="font-08em text-inactive">{{ task.description }}</div>
+                    </div>
+                </div>
+            </div>
+            <div data-ng-if="taskData.length === 0" class="padding-left-sm">
+                <span class="text-inactive">No data available</span>
+            </div>
+        </div>
+    </div>
+</div>

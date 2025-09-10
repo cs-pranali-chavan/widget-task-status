@@ -1,0 +1,23 @@
+{
+    "name": "taskStatus",
+    "title": "Task Status",
+    "subTitle": "Task Status Widget",
+    "version": "1.0.0",
+    "published_date": 1757531758,
+    "releaseNotes": "unavailable",
+    "metadata": {
+        "description": "This widget gives task status information",
+        "pages": [
+            "View Panel"
+        ],
+        "certified": "No",
+        "publisher": "Fortinet",
+        "compatibility": [
+            "7.6.2"
+        ],
+        "category": [
+            "Content Management"
+        ]
+    },
+    "development": false
+}

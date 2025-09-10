@@ -1,0 +1,102 @@
+/* Copyright start
+  Copyright (C) 2008 - 2025 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright end */
+
+.contentBox {
+    display: flex;
+}
+
+.contentText{
+    color: #FFF;
+}
+
+.icon-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon.current {
+    filter: drop-shadow(0 0 4px rgba(33, 150, 243, 0.6));
+}
+
+.content {
+    border-radius: 4px;
+}
+
+time {
+    font-size: 0.875em;
+    color: #AAA;
+}
+
+.contentBox .teal{
+    color: #00e5ff;
+}
+
+.failed-red{
+    color: red;
+}
+
+.awaiting-yellow{
+    color: #f59e09;
+}
+
+.queued{
+    color: #808080;
+}
+
+.contentTextHighlighted{
+    background-color: #121923;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.light .contentTextHighlighted{
+    background-color: #7baaf33b !important;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.contentBackground{
+    background-color: black;
+}
+
+.light .contentBackground{
+    background-color: #7baaf33b !important; 
+}
+
+.light .contentText{
+    color: #fff !important;
+}
+
+.maxContent{
+    max-height: 300px;
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+
+.taskLine ::after{
+    content: "";
+    width: 1px;
+    height: calc(100% - 7px);
+    top: 29px;
+    left: calc(50% - 0.5px);
+    position: absolute;
+    background-color: #00BCD4;
+    z-index: 2;
+}
+
+/* Don't draw line for last item */
+.taskLine.is-last ::after {
+  display: none;
+}
+
+.taskStatusContainer .maxHeight {
+    max-height: 350px;
+    overflow-y: auto;
+}
