@@ -20,7 +20,7 @@
                 <input id="title" name="title" type="text" class="form-control" data-ng-model="config.title">
             </div>
             <div class="form-group">
-                <label class="control-label" for="jsonValue">Select Field
+                <label class="control-label" for="jsonValue">{{ ::'COMPONENTS.VIEW_TEMPLATES.WIDGETS.RECOMMENDATION.SELECT_FIELDS' | translate }}
                     <span class="text-danger">*</span></label>
                 <select class="form-control" name="jsonValue" id="jsonValue"
                     data-ng-options="field.name as field.title for field in jsonFields" ng-model="config.jsonField" required>
@@ -31,8 +31,8 @@
     </div>
     <div class="modal-footer">
         <button id="edit-widget-save" type="submit" class="btn btn-sm btn-primary"><i
-                class="icon icon-check margin-right-sm"></i>Save</button>
+                class="icon icon-check margin-right-sm"></i>{{ ::'APP.BUTTON.SAVE' | translate }}</button>
         <button id="edit-widget-cancel" type="button" class="btn btn-sm btn-default" data-ng-click="cancel()"><i
-                class="icon icon-close margin-right-sm"></i>Close</button>
+                class="icon icon-close margin-right-sm"></i>{{ ::'APP.LABEL.CLOSE' | translate }}</button>
     </div>
 </form>
