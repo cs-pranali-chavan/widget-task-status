@@ -1,5 +1,5 @@
 /* Copyright start
-  Copyright (C) 2008 - 2025 Fortinet Inc.
+  Copyright (C) 2008 - 2026 Fortinet Inc.
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end */
@@ -9,25 +9,16 @@
     .module('cybersponse')
     .controller('taskStatus100Ctrl', taskStatus100Ctrl);
 
-  taskStatus100Ctrl.$inject = ['$rootScope', '$scope', 'widgetUtilityService', 'FormEntityService', 'widgetBasePath'];
+  taskStatus100Ctrl.$inject = ['$rootScope', '$scope', 'FormEntityService', 'widgetBasePath'];
 
-  function taskStatus100Ctrl($rootScope, $scope, widgetUtilityService, FormEntityService, widgetBasePath) {
+  function taskStatus100Ctrl($rootScope, $scope, FormEntityService, widgetBasePath) {
 
     $scope.currentTheme = $rootScope.theme.id;
     $scope.taskData = [];
     $scope.widgetBasePath = widgetBasePath;
     var watchers = [];
-    function _handleTranslations() {
-      widgetUtilityService.checkTranslationMode($scope.$parent.model.type).then(function () {
-        $scope.viewWidgetVars = {
-          // Create your translating static string variables here
-        };
-      });
-    }
 
     function init() {
-      // To handle backward compatibility for widget
-      _handleTranslations();
       createData();
       watchers.push($scope.$on('template:refresh', debounce(function (e, updatedFields) {
         // updtaedFields is array of fields with updated values

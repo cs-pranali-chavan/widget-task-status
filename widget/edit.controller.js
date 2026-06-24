@@ -1,5 +1,5 @@
 /* Copyright start
-  Copyright (C) 2008 - 2025 Fortinet Inc.
+  Copyright (C) 2008 - 2026 Fortinet Inc.
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end */
@@ -9,30 +9,12 @@
     .module('cybersponse')
     .controller('editTaskStatus100Ctrl', editTaskStatus100Ctrl);
 
-  editTaskStatus100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config', 'widgetUtilityService', '$timeout', 'appModulesService', 'modelMetadatasService', 'Entity', 'FormEntityService'];
+  editTaskStatus100Ctrl.$inject = ['$scope', '$uibModalInstance', 'config', 'FormEntityService'];
 
-  function editTaskStatus100Ctrl($scope, $uibModalInstance, config, widgetUtilityService, $timeout, appModulesService, modelMetadatasService, Entity, FormEntityService) {
+  function editTaskStatus100Ctrl($scope, $uibModalInstance, config, FormEntityService) {
     $scope.cancel = cancel;
     $scope.save = save;
     $scope.config = config;
-
-    function _handleTranslations() {
-      let widgetNameVersion = widgetUtilityService.getWidgetNameVersion($scope.$resolve.widget, $scope.$resolve.widgetBasePath);
-
-      if (widgetNameVersion) {
-        widgetUtilityService.checkTranslationMode(widgetNameVersion).then(function () {
-          $scope.viewWidgetVars = {
-            // Create your translating static string variables here
-          };
-          $scope.header = $scope.config.title ? 'Edit widget' : 'Add widget';
-          loadAttributes();
-        });
-      } else {
-        $timeout(function () {
-          $scope.cancel();
-        });
-      }
-    }
 
     function loadAttributes() {
       $scope.fields = [];
@@ -52,8 +34,8 @@
     };
 
     function init() {
-      // To handle backward compatibility for widget
-      _handleTranslations();
+      $scope.header = $scope.config.title ? 'Edit widget' : 'Add widget';
+      loadAttributes();
     }
 
     init();

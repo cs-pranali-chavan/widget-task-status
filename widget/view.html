@@ -1,5 +1,5 @@
 <!-- Copyright start
-  Copyright (C) 2008 - 2025 Fortinet Inc.
+  Copyright (C) 2008 - 2026 Fortinet Inc.
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end -->
@@ -31,13 +31,13 @@
                     </div>
                     <div class="content contentText line-height-12 padding-top-sm width-100pt">
                         <div class="font-09em">{{ task.title }}</div>
-                        <time class="font-07em text-inactive">{{ task.statusUpdateTime }}</time>
+                        <time class="font-07em displayTime text-inactive">{{ task.statusUpdateTime }}</time>
                         <div class="font-08em text-inactive">{{ task.description }}</div>
                     </div>
                 </div>
             </div>
             <div data-ng-if="taskData.length === 0" class="padding-left-sm">
-                <span class="text-inactive">No data available</span>
+                <span class="text-inactive">{{ :: 'taskStatus.MSG_NO_DATA_AVAILABLE' | translate }}</span>
             </div>
         </div>
     </div>
