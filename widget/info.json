@@ -1,14 +1,19 @@
 {
     "name": "taskStatus",
     "title": "Task Status",
-    "subTitle": "Task Status Widget",
+    "subTitle": "The Task Status widget displays a timeline of tasks on a record's detail view",
     "version": "1.0.0",
     "published_date": 1757531758,
     "releaseNotes": "unavailable",
     "metadata": {
-        "description": "This widget gives task status information",
+        "description": "The Task Status widget displays a timeline of tasks on a record's detail view, showing the current status of each task at a glance. Each task entry shows a title, a timestamp, a description, and a status indicator — making it easy for analysts to track task progress without leaving the record.",
+        "help_online": "https://github.com/fortinet-fortisoar/widget-task-status/blob/release/1.0.0/README.md",
         "pages": [
             "View Panel"
+        ],
+        "snapshots": [
+            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/taskStatus-1.0.0\/widgetAssets\/snapshots\/task-status-details.png",
+            "https:\/\/repo.fortisoar.fortinet.com\/widgets\/taskStatus-1.0.0\/widgetAssets\/snapshots\/task-status-edit.png"
         ],
         "certified": "No",
         "publisher": "Fortinet",
